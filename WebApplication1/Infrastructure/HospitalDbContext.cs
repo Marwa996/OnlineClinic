@@ -16,5 +16,7 @@ namespace WebApplication1.Infrastructure
             //Empty constructor.
         }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+         public DbSet<DoctorModel> Doctors { get; set; }
+        public DbSet<AppointmentModel> Appointments { get; set; }
     }
 }
