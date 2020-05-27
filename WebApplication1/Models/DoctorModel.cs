@@ -1,4 +1,8 @@
-﻿namespace WebApplication1.Models.Models
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using WebApplication1.Validations;
+namespace WebApplication1.Models
 {
     public class DoctorModel
     {

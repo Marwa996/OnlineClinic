@@ -27,5 +27,6 @@ namespace WebApplication1.Models
 
         [Display(Name = "Block User")]
         public Boolean Blocked { get; set; }
+        public virtual List<AppointmentModel> Appointments { get; set; }
     }
 }

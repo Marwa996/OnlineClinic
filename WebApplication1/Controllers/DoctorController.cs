@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using WebApplication1.ViewModels;
-using WebApplication1.Models.Models;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -79,6 +79,41 @@ namespace WebApplication1.Controllers
                 return View(doctor);
             }
         }
+
+        // GET: /Doctors/History
+        [Authorize(Roles = "Admin, Doctor")]
+        public ActionResult History(string id)
+        {
+            int n;
+            bool isInt = int.TryParse(id, out n);
+            if (!isInt)
+            {
+                var user = db.ApplicationUsers.First(u => u.UserName == id);
+                var model = new EditUserViewModel(user);
+                DoctorModel doctor = db.Doctors.FirstOrDefault(u => u.Name == user.Name);
+                if (doctor == null)
+                {
+                    return View("Error");
+                }
+                doctor.Appointments.Sort();
+                return View(doctor);
+            }
+            else
+            {
+                if (!User.IsInRole("Admin"))
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                DoctorModel doctor = db.Doctors.Find(n);
+                if (doctor == null)
+                {
+                    return View("Error");
+                }
+                doctor.Appointments.Sort();
+                return View(doctor);
+            }
+        }
+
 
 
     }

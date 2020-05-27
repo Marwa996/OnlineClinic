@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using WebApplication1.Infrastructure;
+using WebApplication1.Models;
+using Microsoft.AspNet.Identity;
 namespace WebApplication1.Controllers
 {
     public class AppoientmentController : Controller
