@@ -8,7 +8,7 @@ using WebApplication1.Infrastructure;
 using WebApplication1.Models;
 using WebApplication1.Validations;
 
-namespace WebApplication1.ViewModels
+namespace WebApplication1.Models
 {
     public class ManageUserViewModel
     {
