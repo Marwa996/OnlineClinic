@@ -225,6 +225,7 @@
     <Content Include="Views\Appoientment\Create.cshtml" />
     <Content Include="Views\Doctor\History.cshtml" />
     <Content Include="Views\Doctor\UpcomingAppointments.cshtml" />
+    <Content Include="Views\Appoientment\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
